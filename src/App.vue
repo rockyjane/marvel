@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="hihi">
+      <h1>{{ h1Title }}</h1>
+    </div>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -12,7 +15,12 @@ export default {
   name: 'app',
   components: {
     HelloWorld
-  }
+  },
+  data() {
+    return {
+      h1Title: 'hihi',
+    }
+  },
 }
 </script>
 
