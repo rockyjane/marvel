@@ -158,7 +158,6 @@
                 this.$set(this.coupleForm, 'id', this.item.id);
             },
             editCouple(action) {
-                cl('editCouple', action)
                 this.fixInfo = action;
                 this.$nextTick(() => {
                     this.setDefault();
@@ -189,6 +188,7 @@
                 if (confirm('刪除後將無法復原哦') && confirm("確定要刪除？")) {
                     jsonBinApi.byJsonBinGetMarvelCouple((res)=>{
                         let fackGroup = res,
+                            // eslint-disable-next-line
                             remove = fackGroup.splice(this.coupleForm.id - 1, 1)
                         for(let data in fackGroup) {
                             fackGroup[data].id = (parseInt(data, 10) + 1);
