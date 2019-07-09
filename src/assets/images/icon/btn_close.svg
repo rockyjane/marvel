@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.001 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d2d2d2;
+      }
+    </style>
+  </defs>
+  <g id="btn_close" transform="translate(9923.001 14141)">
+    <rect id="path" class="cls-1" width="20.688" height="1.939" rx="0.97" transform="translate(-9921.629 -14141) rotate(45)"/>
+    <rect id="path-2" data-name="path" class="cls-1" width="1.939" height="20.688" rx="0.97" transform="translate(-9908.372 -14141) rotate(45)"/>
+  </g>
+</svg>

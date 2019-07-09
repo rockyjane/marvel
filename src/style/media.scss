@@ -1,0 +1,59 @@
+@media screen and (max-width: 1024px) {
+    // Home start
+    .home {
+        .parallaxItem {
+            &.item1 {
+                .code-container {
+                    width: 75%;
+                }
+            }
+            padding: 50px 30px;
+        }
+    }
+    // Home end
+}
+@media screen and (max-width: 767px) {
+    // Home start
+    .home {
+        .parallaxItem {
+            &.item1 {
+                .code-container {
+                    width: 95%;
+                }
+            }
+            &.item3 p {
+                border-bottom: 1px solid $pageLightBlack7;
+                padding-bottom: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    // Home end
+    // Imgur start
+    .imgur {
+        .content {
+            width: 90%;
+            padding: $pagePushDown / 2;
+            img {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    }
+    // Imgur end
+    // Marvel start
+    .marvel {
+        .card-box{
+            column-count: 1;
+            &:after {display: none;}
+            .card-list {width: 100%;}
+        }
+        .strips {
+            min-height: 100vh;
+            overflow: inherit;
+            .strips__strip:nth-child(3) .strip__title {font-size: ($pagePushDown * 2) - ($pagePushDown / 3);}
+            .strip__close {top: 12vh;}
+        }
+    }
+    // Marvel end
+}

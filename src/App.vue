@@ -1,36 +1,23 @@
 <template>
-  <div id="app">
-    <div class="hihi">
-      <h1>{{ h1Title }}</h1>
+    <div id="app">
+        <page-header />
+        <router-view></router-view>
+        <page-footer />
+        <loading />
     </div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import pageHeader from '@/components/common/Header';
+    import pageFooter from '@/components/common/Footer';
+    import Loading from '@/components/partials/Loading'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  },
-  data() {
-    return {
-      h1Title: 'hihi',
+    export default {
+        name: 'app',
+        components: {
+            pageHeader,
+            pageFooter,
+            Loading,
+        },
     }
-  },
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

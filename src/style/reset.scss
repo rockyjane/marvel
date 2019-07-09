@@ -1,0 +1,1778 @@
+// SCSS Var start
+$pageTSize:16px;
+$pageBlack:#4D4D4D;
+$pagePurple:#8F96B2;
+$pageLightBlack2:#282E34;
+$pageLightBlack3:#B5B5B5;
+$pageLightBlack4:#F8F8F8;
+$pageLightBlack5:#f4f4f4;
+$pageLightBlack6:#B9B9B9;
+$pageLightBlack7:#e7e7e7;
+$pageLightBlack8:rgb(29, 29, 30);
+$pageLightBlack9:#8C8C8C;
+$pageLightBlack10:#E1E0E1;
+$pageLightBlack11:rgb(28, 29, 29);
+$pageLightBlack12:#efefef;
+$pageLightBlack13:#e5e5e5;
+$pageLightBlack14:#777;
+$pageLightBlack15:#ccc;
+$pageLightBlack16:rgba(255, 255, 255, 0.5);
+$pageLightBlack17:rgba(0, 0, 0, 0.125);
+$pageShallowBlack:#A4ABB9;
+$pageShallowBlack2:#949494;
+$pageLightBlack:#D2D2D2;
+$pageWhite:#ffffff;
+$pageShallowWhite:#DADADA;
+$pageLightBlue:#388CD6;
+$pageDeepBlue:#0089FF;
+$pageShallowBlue:#60B5FF;
+$pageShallowBlue2:#EFF7FF;
+$pageShallowBlue3:#FCFCFC;
+$pageGreen:#00646E;
+$pageShallowGreen:#7DD181;
+$pagePink:#fbb;
+$pageRed:#E60012;
+$pageRed2:#FF6565;
+$pageYellow:#E0AB00;
+$pageShallowYellow:#FDDC48;
+$pageShallowYellow2:#FFEDB4;
+$pageLightYellow:gold;
+$pageTransparent:transparent;
+$pagePushDown:30px;
+$pageShadow: 7px 10px 33px rgba(0, 0, 0, 0.3);
+$textHover:color .1s .15s linear;
+
+// Marvel-2 defalut start
+$color1: #244F75;
+$color2: #60BFBF;
+$color3: #ea2228;
+$color4: #F8BB44;
+$color5: #8C4B7E;
+$color6: rgb(85, 85, 85);
+$color7: #fff;
+$colors: $color1 $color2 $color3 $color4 $color5;
+$strip: strip1 strip2 strip3 strip4 strip5;
+$strip_form: translate3d(-100%, 0, 0)
+             translate3d(0, 100%, 0)
+             translate3d(0, -100%, 0)
+             translate3d(0, 100%, 0)
+             translate3d(100%, 0, 0);
+@mixin easeOut {
+    transition: all .6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@mixin break {
+    @media screen and (max-width: 760px) {
+        @content;
+    }
+}
+@keyframes strip1 {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes strip2 {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes strip3 {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes strip4 {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes strip5 {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+// Marvel-2 defalut end
+
+
+%posr{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+%posa{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+%posf{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+// SCSS Var end
+// Reset start
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: $pageTSize;
+    color: $pageBlack;
+    -webkit-text-size-adjust: none;
+    font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+svg {
+    fill: currentColor;
+}
+
+legend {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: $pageBlack;
+    &:hover {
+        text-decoration: none;
+        color: $pageShallowBlue;
+        transition: $textHover;
+    }
+    &:focus {
+        color: $pageShallowBlue;
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+img:not([width]) {
+    width: 100%;
+    height: auto;
+}
+
+input {
+    border: 1px solid $pageShallowBlack;
+    text-indent: 15px;
+    border-radius: 5px;
+    &::placeholder {
+        color: $pageShallowBlack;
+    }
+    &[type="radio"] {
+        display: none;
+    }
+    &:focus {
+        border-color: $pageShallowBlue;
+        outline: none;
+    }
+    &[type=number]::-webkit-inner-spin-button{-webkit-appearance: none;}
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    &:disabled.simple-control::-ms-expand {
+        display: none;
+    }
+    &:disabled{
+        /*For FireFox*/
+        -webkit-appearance: none;
+        /*For Chrome*/
+        -moz-appearance: none;
+    }
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+.posr{
+    @extend %posr;
+}
+.posa{
+    @extend %posa;
+}
+.posf{
+    @extend %posf
+}
+
+.filterBlur { 
+    filter: blur(30px);
+}
+
+.pageShadowBox{box-shadow: $pageShadow;}
+@media screen and (max-width:414px) {
+    .pageShadowBox{box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);}
+}
+
+.o-hidden {overflow: hidden;}
+.pageTextBlack{color:$pageBlack;}
+.pageTextRed{color:$pageRed;}
+
+// 鼠標形式
+.curPoin {cursor:pointer;}
+
+// 特殊字型
+.only_pierFont {font-family: "Pier",sans-serif;}
+.pierFont {
+    font-family: "Pier",sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+// Google SignIn api 按鈕
+.g-signin2 {
+    opacity: 0;
+    width: 100%;
+}
+
+// 表單系列
+.store_btn {
+    width: 200px;
+    height: 40px;
+    font-size: $pageTSize;
+    color: $pageWhite;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: $pagePushDown / 2;
+    background-image: linear-gradient(to bottom,$pageShallowBlue, $pageLightBlue);
+    transition:all .3s ease-in-out;
+    &:focus,&:hover{
+        outline:none;
+        transition:all .3s ease-in-out;
+        background-image: linear-gradient(to bottom,$pageLightBlue, $pageShallowBlue);
+    }
+}
+.remember_me {
+    input {
+        display: none;
+        margin-bottom: $pagePushDown / 2;
+        &:checked + label:after {opacity: 1;}
+    }
+    label {
+        font-size: $pageTSize - 2;
+        text-indent: 20px;
+        margin: 0;
+        &:before, &:after {
+            content:'';
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 3px;
+            left: 0px;
+        }
+        &:before {
+            border: 1px solid $pageDeepBlue;
+            border-radius: 5px;
+        }
+        &:after {
+            content:'✓';
+            width: 10px;
+            height: 10px;
+            left: -18px;
+            top: 1px;
+            opacity: 0;
+            color: $pageDeepBlue;
+        }
+    }
+    a {
+        display: block;
+        font-size: $pageTSize - 2;
+        margin-top: 2px;
+    }
+}
+.store_box {
+    position: relative;
+    top: 0;
+    left: 0;
+    .county {
+        &.city {
+            select {
+                background-image: url('../assets/images/icon/icon_map.svg');
+                &:focus {background-image: url('../assets/images/icon/icon_map_b.svg');}
+                &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_map_r.svg');}
+            }
+        }
+        select {
+            width: 100%;
+            height: 33px;
+            margin-bottom: $pagePushDown;
+            color:$pageLightBlack9;
+            text-indent: $pagePushDown;
+            font-size:$pageTSize;
+            background-color: $pageWhite;
+            background-image: url('../assets/images/icon/icon_country.svg');
+            background-repeat: no-repeat;
+            background-size: 12px 16px;
+            background-position: left;
+            border:none;
+            border-bottom: 2px  solid $pageLightBlack9;
+            border-radius: 0;
+            appearance: none;
+            &:focus {
+                background-image: url('../assets/images/icon/icon_country_b.svg');
+                outline: none;
+                color:$pageShallowBlue;
+                border-color:$pageShallowBlue;
+            }
+            &[aria-invalid="true"] {
+                background-image: url('../assets/images/icon/icon_country_r.svg');
+                border-color:$pageRed;
+                color:$pageLightBlack3;
+            }
+            &[aria-invalid="true"] {margin-bottom:$pagePushDown / 2;}
+        }
+    }
+    input {
+        width: 100%;
+        height: 33px;
+        color:$pageBlack;
+        text-indent: $pagePushDown;
+        font-size:$pageTSize;
+        margin: 0 0 $pagePushDown 0;
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-bottom: 2px  solid $pageLightBlack9;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 12px 16px;
+        &::placeholder {color:$pageLightBlack3;}
+        &:focus {
+            border-color:$pageShallowBlue;
+            color:$pageShallowBlue;
+            + label {color:$pageShallowBlue;}
+        }
+        &.customers { // 介紹人編號、Info編輯頁姓名
+            background-image: url('../assets/images/icon/icon_customers.svg');
+            background-size: 12px 16px;
+            &:focus {background-image: url('../assets/images/icon/icon_customers_b.svg');}
+            &[aria-invalid="true"] {
+                background-image: url('../assets/images/icon/icon_man_r.svg');
+                + a {display: none;}
+            }
+        }
+        &.username {
+            background-image: url('../assets/images/icon/icon_customers.svg');
+            background-size: 12px 16px;
+            &:focus {background-image: url('../assets/images/icon/icon_customers_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_man_r.svg');}
+            + .text-danger {text-align: left;}
+        }
+        &.phone {
+            background-image: url('../assets/images/icon/icon_phone.svg');
+            &:focus {background-image: url('../assets/images/icon/icon_phone_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_phone_r.svg');}
+        }
+        &.usercard {
+            background-image: url('../assets/images/icon/icon_id.svg');
+            &:focus {background-image: url('../assets/images/icon/icon_id_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_id_r.svg');}
+        }
+        &.account {
+            background-image: url('../assets/images/icon/icon_maill.svg');
+            background-size: 12px 16px;
+            &:focus {background-image: url('../assets/images/icon/icon_maill_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_maill_r.svg');}
+        }
+        &[type="email"] {
+            background-image: url('../assets/images/icon/icon_maill.svg');
+            background-size: 12px 16px;
+            &:focus {background-image: url('../assets/images/icon/icon_maill_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_maill_r.svg');}
+        }
+        &[type="password"] {
+            background-image: url('../assets/images/icon/icon_password.svg');
+            background-size: 14px 16px;
+            &:focus {background-image: url('../assets/images/icon/icon_password_b.svg');}
+            &[aria-invalid="true"] {background-image: url('../assets/images/icon/icon_password_r.svg');}
+        }
+        &[type="radio"],
+        &[type="checkbox"] { 
+            & ~ label {
+                width: 50%;
+                height: 33px;
+                color: $pageBlack;
+                padding-top: $pagePushDown / 6;
+                line-height: 21px;
+                margin: 0 0 $pagePushDown 0;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 2px solid $pageLightBlack9;
+                .circle {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 20px;
+                    height: 20px;
+                    border:1px solid $pageLightBlack3;
+                    border-radius: 50%;
+                    &:before {
+                        content:'';
+                        display: block;
+                        width: 55%;
+                        height: 55%;
+                        background-color: $pageShallowBlue;
+                        border:1px solid $pageShallowBlue;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        transition: opacity .3s ease-in-out;
+                        opacity: 0;
+                    }
+                }
+            }
+            &:checked + label .circle:before {
+                opacity: 1;
+            }
+        }
+        &[aria-invalid="true"][aria-required] {
+            border-color:$pageRed;
+            color:$pageRed;
+            margin-bottom: $pagePushDown / 2;
+        }
+    }
+    .text-danger{ // 搭配 v-validate
+        margin: -10px 0 5px;
+        display: block;
+        &:before {
+            content:'';
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-image: url('../assets/images/icon/icon_attention.svg');
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 8px;
+            right: 0;
+        }
+    }
+    .mx-datepicker { // 搭配 vue2-datepicker
+        width: 100%;
+        .mx-input {
+            text-indent: $pagePushDown + ($pagePushDown / 3);
+            box-shadow: none;
+        }
+        .mx-input-append {
+            background-repeat: no-repeat;
+            background-image: url('../assets/images/icon/arrow_under.svg');
+            height: 9px;
+            top: 12px;
+            background-position: 10px;
+            padding: 0;
+        }
+        &[aria-invalid="true"] .mx-input-append {display: none;}
+        .mx-clear-wrapper, svg {display: none;}
+    }
+    .onlymonth .mx-calendar-header, .onlyday .mx-calendar-header {visibility: hidden;} // 隱藏上方年月份
+    &.labelWord {
+        margin-bottom: $pagePushDown - ($pagePushDown / 3);
+        input {
+            text-indent: 30%;
+            margin-bottom: $pagePushDown / 2;
+        }
+        label {
+            top: 4px;
+            .justWhite {
+                background-color: $pageWhite;
+                height: 25px;
+                &.justify {width: 64px;}
+            }
+        }
+        &[aria-invalid="true"] {
+            label {color:$pageRed;}
+            input {
+                border-color:$pageRed;
+                &:focus + label {color:$pageShallowBlue;}
+            }
+        }
+    }
+    &.rewardBox {
+        input[type="radio"] ~ label {
+            cursor: pointer;
+            width: auto;
+            height: auto;
+            border:none;
+            border-radius: $pagePushDown / 2;
+            padding: ($pagePushDown / 6) ($pagePushDown / 3);
+            margin-top: - ($pagePushDown / 3);
+            margin-right: $pagePushDown / 2;
+        }
+        input[type="radio"]:checked + label {
+            color: $pageWhite;
+            background-color: $pageShallowBlue;
+            transition: all .2s ease-in-out;
+        }
+    }
+    &.donation_amount,
+    &.agree {
+        input {display: none;}
+        input[type="radio"] ~ label,
+        input[type="checkbox"] + label {
+            cursor: pointer;
+            border:none;
+            width: auto;
+            height: auto;
+            padding-top: 0;
+            margin-right: $pagePushDown * 2;
+            .circle {
+                border-radius: $pagePushDown / 6;
+                width: 15px;
+                height: 15px;
+                top: 3px;
+                margin-right: $pagePushDown / 2;
+                &:before {
+                    background: none;
+                    border: none;
+                    border-radius: $pagePushDown / 6;
+                }
+            }
+        }
+        input[type="radio"]:checked + label,
+        input[type="checkbox"]:checked + label {
+            .circle {
+                border:none;
+                &:before {
+                    content: '✓';
+                    font-size: $pageTSize + 5;
+                    color: $pageWhite;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $pageShallowBlue;
+                }
+            }
+        }
+    }
+    &.upFileBox {
+        margin-bottom: $pagePushDown - ($pagePushDown / 3);
+        input {display: none;}
+        label {
+            cursor: pointer;
+            width: 100%;
+            height: 200px;
+            border:1px solid $pageLightBlack3;
+            border-radius: $pagePushDown / 3;
+            background-image: url('../assets/images/icon/btn_update.svg');
+            background-repeat: no-repeat;
+            background-position: center ($pagePushDown + ($pagePushDown / 2));
+            background-size: 110px;
+            line-height: 270px;
+            font-size:$pageTSize;
+            color:$pageLightBlack3;
+            background-color: $pageLightBlack16;
+            img {
+                height: 100%;
+                object-fit: cover;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                padding: $pagePushDown / 3;
+            }
+        }
+        .text-danger {
+            margin: 0;
+            &:before {right: 8px;}
+        }
+    }
+}
+
+.store_label {
+    width: 100%;
+    margin-bottom: $pagePushDown / 3;
+}
+
+.store_input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: $pagePushDown - ($pagePushDown / 3);
+    background-color: rgba(255,255,255,.5);
+    &[type="date"] {
+        text-indent: 8px;
+        color: $pageShallowBlack;
+    }
+}
+
+.store_input_center {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    text-indent: 0;
+}
+
+.store_input_sm {
+    width: 100%;
+    height: 30px;
+    margin-bottom: $pagePushDown / 2;
+}
+
+.store_textarea {
+    max-width: 100%;
+    min-width: 100%;
+    height: 80px;
+    min-height: 80px;
+    max-height: 240px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: $pageShallowBlack;
+    background-color: rgba(255,255,255,.5);
+    margin-bottom: $pagePushDown - ($pagePushDown / 3);
+    outline: none;
+    // &:hover,
+    &:focus {
+        border-color: $pageShallowBlue;
+    }
+    &::placeholder {
+        color: $pageShallowBlack;
+    }
+}
+
+.store_select {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid $pageShallowBlack;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    vertical-align: middle;
+    padding: 0 5px;
+    margin-bottom: $pagePushDown - 10;
+    select {
+        width: 100%;
+        height: 40px;
+        outline: none;
+        background-color: $pageTransparent;
+        border: none;
+        color:$pageShallowBlack;
+        &:hover,
+        &:focus {
+            border-color: $pageShallowBlue;
+        }
+    }
+}
+
+.store_search_link {
+    background-color: $pageShallowBlue;
+    color: $pageWhite;
+    display: inline-block;
+    border: 1px solid $pageShallowBlue;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: $pagePushDown / 3;
+    transition: background-color .3s ease;
+    &:hover,
+    &:focus {
+        background-color: $pageDeepBlue;
+        color: $pageWhite;
+        border-color: $pageDeepBlue;
+        transition: background-color .2s ease;
+    }
+}
+
+.store_radioBox {
+    label {
+        margin-right: $pagePushDown;
+        text-indent: $pagePushDown;
+        &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            vertical-align: middle;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: $pageWhite;
+            border:1px solid $pageBlack;
+        }
+        &:after {
+            content:'';
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+    }
+    input:checked + label {
+        &:after {background-color: $pageShallowBlue;}
+    }
+}
+
+// 圖片盒子
+.img_box {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    img {
+        object-fit: cover;
+        max-width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+    }
+    .center_p {
+        height: $pageTSize * 4;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        color: $pageWhite;
+        font-size: $pageTSize * 4;
+        font-weight:bolder;
+        z-index: 1;
+    }
+}
+
+// 左右對齊
+.justify {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+    -moz-text-align-last: justify;
+    -webkit-text-align-last: justify;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+// Rwd Table
+.table_rwd {
+    border-collapse:collapse;
+    text-align:center;
+    margin: 0 auto;
+    .tr_hide {
+      background-color: #fbe7e9;
+      th{text-align:center;}
+    }
+    .Trli {
+      border-bottom:1px solid #ccc;
+      text-align:left;
+        &:hover {background-color: $pageShallowBlue2;}
+    }
+    td {
+      text-align:center;
+      padding: 5px;
+    }
+    td[data-th] {
+      overflow:hidden;
+      &:after {
+        content:"";
+        display: block;
+        clear:both;
+        line-height:0;
+        font-size:0;
+      }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .table_rwd {
+        min-width: 100%;
+        border:0;
+        .tr_hide {display: none !important;}
+        th {border:0;}
+        tr {
+          display: block;
+          border:1px solid #ddd;
+        }
+        td {
+          display: block;
+          width: 100%;
+          text-align:left;
+          border:0;
+          overflow: hidden;
+          &:before {
+            content:attr(data-th)" : ";
+            display: inline-block;
+            text-transform:uppercase;
+            font-weight: bold;
+            color:$pageDeepBlue;
+          }
+        }
+        .notColon:before {
+          content:"";
+          display: none;
+        }
+    }
+}
+
+// 滾軸隱藏
+.scrollbar_none {
+    overflow: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background-color: $pageTransparent;
+        border-radius: 6px;
+    }
+}
+
+// 麵包屑
+.crumb {
+    display: inline-block;
+    font-size: $pageTSize - 2;
+    .breadcrumb {
+        padding: 15px 0 10px;
+        background-color: $pageTransparent;
+    }
+    .breadcrumb li {
+        display: inline-block;
+        margin-right: 5px;
+        a.active {
+            color: $pageDeepBlue;
+        }
+        &:before {
+            padding-left: 0;
+        }
+    }
+}
+
+// 清除浮動
+.clearbox {
+    &.self {
+        clear: both;
+    }
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        font-size: $pageTSize * 0;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border: 0;
+    }
+}
+
+// 文字不換行加延續效果
+.white_space {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 文章不超過2行
+.line_clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+// 點擊方向鍵圖示
+.direction_icon {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    &:before,
+    &:after {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -1px;
+        left: 80px;
+    }
+    &:before {
+        content: '';
+        border: 1px solid $pageWhite;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '>';
+        top: 0;
+        left: 85px;
+    }
+}
+
+// svg:before預設
+.svg_box {
+    position: relative;
+    top: 0;
+    left: 0;
+    &:before {
+        content: '';
+        display: block;
+        mask-repeat: no-repeat;
+        position: absolute;
+    }
+}
+
+.btnDark {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+// 觸碰後黑化hover轉場效果
+.hoverDark {
+    position: relative;
+    top: 0;
+    left: 0;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .4);
+        opacity: 0;
+        transition: opacity .5s ease;
+        pointer-events: none;
+    }
+    &:hover:after {
+        opacity: 1;
+        transition: opacity .4s .2s ease;
+    }
+}
+
+// 按鈕填滿::hover轉場效果
+.hoverFill {
+    border: 1px solid $pageBlack;
+    // border-radius: 5px;
+    background-image: linear-gradient(to right, $pageBlack 50%, $pageWhite 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    color: $pageBlack;
+    font-weight:bold;
+    letter-spacing:2px;
+    transition: background .25s, color .3s;
+    &:focus {
+        color: $pageBlack;
+    }
+    &:before {
+        border-color: $pageBlack;
+        transition: border-color .25s;
+    }
+    &:hover {
+        background-position: left;
+        border-color:$pageBlack;
+        color: $pageWhite;
+        transition: background .25s .2s, color .3s .4s, ;
+        &:before {
+            border-color: $pageWhite;
+            transition: border-color .3s .4s;
+        }
+    }
+}
+
+// 按鈕變淡::hover轉場效果
+.hoverShallow {
+    background-color: $pageLightBlue;
+    &:hover {
+        transition: background-color .25s .15s ease-in-out;
+        background-color: $pageDeepBlue;
+    }
+}
+
+// 按鈕變有背景色::hover轉場效果
+.hoverTextBgc{
+    &:hover,&.router-link-active{
+        color:$pageWhite;
+        transition: background-color .25s .15s ease-in-out;
+        background-color: $pageShallowBlue;
+    }
+}
+
+// 配合JS展開型樣式
+.data_nextAll_slide {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid $pageShallowBlue;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    .svg_box {
+        position: absolute;
+        right: 20px;
+        left: auto;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        transition: transform .3s ease-in-out;
+        transform: rotate(-90deg);
+        &:before {
+            width: 100%;
+            height: 100%;
+            background-color: $pageShallowBlue;
+            // mask-image: url('../images/icon/left.svg');
+            mask-repeat: no-repeat;
+        }
+    }
+    &.active {
+        .svg_box {
+            transition: transform .3s ease;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// Reset end
+// Bootstrap start
+
+// tag 按鈕顏色
+.router-link-exact-active {color: $pagePink;}
+
+// modal
+.modal{
+    button{
+        outline:none;
+        &:focus{
+            box-shadow: none;
+            border-color:$pageLightBlue;
+        }
+    }
+    .modal-body{
+        padding: ($pagePushDown / 2);
+        padding-right: $pagePushDown + ($pagePushDown / 2);
+    }
+    .modal-header {
+        background-color: $pageTransparent;
+        border-top-right-radius: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        border: none;
+        height: auto;
+        padding-bottom: $pagePushDown * 0;
+        h5{
+            color:$pageDeepBlue;
+            width: 100%;
+            font-size:$pageTSize + 2;
+            font-weight:bolder;
+        }
+        .close{
+            position: absolute;
+            opacity: 1;
+            font-size: $pageTSize * 2 + 8;
+            font-weight: lighter;
+            right: 16px;
+            top: 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: $pageShallowWhite;
+            transition:transform .3s ease-in-out;
+            &:hover{
+                color: $pageShallowWhite;
+                transform:scale(1.3);
+                opacity: 1;
+            }
+        }
+    }
+    .modal-content{
+        border-radius: 10px;
+        padding-left: $pagePushDown;
+        background-color: $pageLightBlack4;
+    }
+}
+
+// 麵包屑
+.breadcrumbs{
+    .breadcrumb{
+        padding: ($pagePushDown / 2) 0 0 0;
+        font-size:$pageTSize - 2;
+    }
+    ol{background-color: transparent;}
+    a{
+        color:$pageShallowBlack;
+    }
+    li.active{
+        color:$pageShallowBlack;
+    }
+}
+
+@media screen and (max-width:768px){
+    .modal{
+        .modal-header {
+            .close{
+                right: 16px;
+                border-radius: 0;
+            }
+        }
+    }
+    .breadcrumbs{padding-top: $pagePushDown / 2;}
+}
+
+.errors_box{color:$pageRed;}
+
+.btPrHalf {
+    padding-right: 7.5px;
+}
+
+.btPlHalf {
+    padding-left: 7.5px;
+}
+
+.btPrHalf-0 {
+    padding-right: 0;
+}
+
+.btPlHalf-0 {
+    padding-left: 0;
+}
+
+// 5等分
+.col-2dot4,
+.col-sm-2dot4,
+.col-md-2dot4,
+.col-lg-2dot4,
+.col-xl-2dot4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-2dot4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+@media (min-width: 540px) {
+    .col-sm-2dot4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+@media (min-width: 720px) {
+    .col-md-2dot4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+@media (min-width: 960px) {
+    .col-lg-2dot4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+@media (min-width: 1140px) {
+    .col-xl-2dot4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+// bootstrap end
+// bootstrap + vue plugin start
+.btn{
+    &.clickEnter {
+        background-color: $pageLightBlack12;
+        border-bottom: 2px solid $pageLightBlack15;
+        color: $pageLightBlack14;
+        margin-top: 6px;
+        transition: background-color .1s ease-in-out;
+        &:focus {box-shadow: none;}
+        &:hover {background-color: $pageLightBlack13;}
+    }
+}
+.slideout-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 256px;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+    background-color: #1d1f20;
+    color: white;
+}
+.slideout-menu-left {
+    left: 0;
+}
+
+.slideout-menu-right {
+right: 0;
+}
+.slideout-panel {
+    background-color: #4b5;
+    color: white;
+    position: relative;
+    z-index: 1;
+    // will-change: transform;
+    min-height: 100vh;
+}
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+.slideout-open .slideout-menu {
+    display: block;
+}
+.slideout-open .slideout-panel:after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    cursor: pointer;
+    z-index: 1;
+}
+.form-inline {
+    display: block;
+    position: relative;
+    .form-control{
+        // width: 250px;
+        border-radius: 5px;
+    }
+    .login_search{
+        position: absolute;
+        top: 2px;
+        right: 25px;
+        background-color: $pageTransparent;
+        border-color:$pageTransparent;
+        // background-image: url('../assets/images/icon/sSearch.svg');
+        background-repeat: no-repeat;
+        background-position:center;
+        height: 25px;
+        &.btn-secondary.btn-sm:hover,&.btn-secondary.btn-sm:active{
+            // background-image: url('../assets/images/icon/search_menu_hover.svg');
+            background-color: $pageTransparent;
+            border-color:$pageTransparent;
+            box-shadow: none;
+        }
+    }
+}
+// bootstrap + vue plugin end
+// pagination start
+.pagination {
+    img {
+        width: 15px;
+        height: 15px;
+    }
+    >li>a {
+        opacity: 0.5;
+        color: $pageBlack;
+        border-color: $pageTransparent;
+        &:hover,
+        &:focus {
+            opacity: 1;
+            background-color: $pageTransparent;
+            border-color: $pageTransparent;
+        }
+    }
+}
+// pagination end
+
+// loadmore start
+.spinner-wrap {
+    margin: auto;
+    position: absolute;
+    left: 130%;
+    -webkit-transform: translateX(-50%) scale(0.4);
+    transform: translateX(-50%) scale(0.2);
+    display: inline-block;
+    top: -15px;
+}
+.spinner {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	margin: -50px auto 0;
+	animation: spin 1s steps(12, end) infinite;
+	&:first-child {
+		margin-right: 50px;
+	}
+	i {
+		height: 30px;
+		width: 6px;
+		margin-left: -3px;
+		display: block;
+		transition: height 1s;
+		position: absolute;
+		left: 50%;
+		transform-origin: center 50px;
+		background: $pageShallowBlack;
+		box-shadow: 0 0 3px $pageShallowBlack;
+		border-radius: 3px;
+	}
+	&:nth-child(2) i {
+		height: 6px;
+	}
+	
+}
+
+.spinner i:nth-child(1) { opacity:.08;height: 6px; }
+.spinner i:nth-child(2) { transform:rotate(30deg);opacity:.167;height: 8px; }
+.spinner i:nth-child(3) { transform:rotate(60deg);opacity:.25;height: 10px; }
+.spinner i:nth-child(4) { transform:rotate(90deg);opacity:.33;height: 12px; }
+.spinner i:nth-child(5) { transform:rotate(120deg);opacity:.4167;height: 14px; }
+.spinner i:nth-child(6) { transform:rotate(150deg);opacity:.5;height: 16px; }
+.spinner i:nth-child(7) { transform:rotate(180deg);opacity:.583;height: 18px; }
+.spinner i:nth-child(8) { transform:rotate(210deg);opacity:.67;height: 20px; }
+.spinner i:nth-child(9) { transform:rotate(240deg);opacity:.75;height: 22px; }
+.spinner i:nth-child(10) { transform:rotate(270deg);opacity:.833;height: 24px; }
+.spinner i:nth-child(11) { transform:rotate(300deg);opacity:.9167;height: 26px; }
+.spinner i:nth-child(12) { transform:rotate(330deg);opacity:1;height: 28px; }
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+// loadmore end
+
+// vue-slider-component start
+.vue-slider-component {
+    padding: 8px 0 !important;
+    .vue-slider {
+        height: 2px !important;
+    }
+    .vue-slider-dot {
+        width: 8px !important;
+        height: 24px !important;
+        top: -10px !important;
+        .vue-slider-dot-handle {
+            border-radius: 5px;
+            background-color: $pageShallowBlue;
+            box-shadow: none;
+        }
+    }
+}
+// vue-slider-component end
+
+// @chenfengyuan/vue-number-input start
+.number-input {
+    &.number-input--controls > .number-input__button--minus,
+    &.number-input--controls > .number-input__button--plus {
+        width: 1.5rem;
+    }
+    &.number-input--controls > .number-input__button--plus:after {height: 38%;}
+    &.number-input--controls > .number-input__input {
+        text-indent: 0;
+        text-align:center;
+        padding: 0;
+    }
+    // yellow
+    &.number_yellow {
+        &.number-input--controls > .number-input__button--minus,
+        &.number-input--controls > .number-input__button--plus {
+            background-color: $pageShallowYellow2;
+            border-color:$pageShallowYellow;
+        }
+        &.number-input--controls > .number-input__input {
+            min-height:$pagePushDown;
+            border-color:$pageShallowYellow;
+            &:focus {border-color:$pageShallowYellow;}
+        }
+    }
+    &.number_blue {
+        &.number-input--controls > .number-input__button--minus,
+        &.number-input--controls > .number-input__button--plus {
+            background-color: $pageShallowBlue2;
+            border-color:$pageShallowBlue;
+        }
+        &.number-input--controls > .number-input__input {
+            min-height:$pagePushDown + ($pagePushDown / 3);
+            border-color:$pageShallowBlue;
+            &:focus {border-color:$pageShallowBlue;}
+        }
+    }
+}
+// @chenfengyuan/vue-number-input end
+
+//flipclock start
+.flip-clock-wrapper{
+    font-family: 'Tauri', sans-serif;
+}
+.flip-clock-divider span{
+    visibility: hidden;
+}
+.flip-clock-wrapper ul li a div div.inn{
+    // background-image: url('../assets/images/pic/time.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    font-size: 60px;
+}
+.flip-clock-wrapper ul li a div.down:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 5;
+    width: 70%;
+    height: 3px;
+    background-color: #000;
+}
+//flipclock end
+
+// table start
+// table end
+// datetimepicker start
+[class^="icon-"],
+[class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    // background-image: url('../images/glyphicons-halflings.png');
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    margin-top: 1px;
+}
+
+.icon-arrow-left {
+    background-position: -240px -96px;
+}
+
+.icon-arrow-right {
+    background-position: -264px -96px;
+}
+
+// datetimepicker end
+// Bootstrap end
+// Owl start
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+    display: block;
+}
+
+.modal-body {
+    padding: 15px 18px;
+}
+
+// 方向 
+.owl-carousel {
+    .owl-nav {
+        .owl-prev,
+        .owl-next {
+            outline: none;
+            position: absolute;
+            top: 33%;
+            span {
+                color: $pageWhite;
+                font-size: $pageTSize * 3 - 4;
+            }
+            &:hover {
+                background-color: $pageTransparent;
+                opacity: 1;
+                span {
+                    color: $pageShallowBlue;
+                }
+            }
+        }
+        .owl-prev {
+            left: 15px;
+        }
+        .owl-next {
+            right: 15px;
+        }
+    }
+}
+
+// 點點
+.owl-theme {
+    .owl-dots {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        .owl-dot {
+            outline: none;
+            span {
+                width: 20px;
+                height: 5px;
+                background-color: $pageWhite;
+                opacity: .65;
+            }
+        }
+        .owl-dot.active span,
+        .owl-dot:hover span {
+            background-color: $pageShallowBlue;
+            opacity: 1;
+        }
+    }
+}
+
+// Owl end
+// SmartWizard(modal-諮詢報價) start
+.advisory_form {
+    .sw-theme-dots>ul.step-anchor {
+        text-align: center;
+        margin: 8px 0;
+        &:before {
+            display: none;
+        }
+        li {
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        // 點擊前
+        li:not(:last-child) {
+            margin: 0 50px;
+            a {
+                padding: 5px 23px;
+                color: $pageShallowBlue;
+                background-color: $pageWhite;
+                border: 1px solid $pageShallowBlue;
+                font-weight: normal;
+                border-radius: 20px;
+                cursor: not-allowed;
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        // 前兩個
+        li:first-child>a,
+        li:nth-child(2)>a {
+            &:before {
+                display: block;
+                width: 95%;
+                height: 3px;
+                border-radius: unset;
+                top: 0;
+                bottom: 0;
+                left: 105%;
+                margin: auto;
+                background-color: $pageShallowBlue;
+            }
+        }
+        // 最後一個
+        li:last-child {
+            position: absolute;
+            right: 0;
+            top: -15px;
+            a {
+                color: $pageShallowBlue;
+                opacity: 1;
+                font-size: 30px;
+                font-weight: lighter;
+            }
+        }
+        // 點擊後
+        li.active>a,
+        li.done>a {
+            color: $pageWhite;
+            background-color: $pageShallowBlue;
+            cursor: pointer;
+        }
+        .close {
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+    }
+    // 下方 button
+    .sw-main {
+        margin-bottom: $pagePushDown;
+    }
+    .btn-group.sw-btn-group {
+        float: none;
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+        button {
+            outline: none;
+        }
+        .btn.btn-secondary.sw-btn-next {
+            width: 300px;
+            height: 50px;
+            background-color: $pageShallowBlue;
+            margin: 0 auto;
+            border-radius: 5px;
+            font-size: 18px;
+            color: $pageWhite;
+            border-radius: 50px;
+            transition: background-color .3s ease;
+            &:hover {
+                background-color: $pageDeepBlue;
+            }
+        }
+    }
+    .btn.btn-secondary.sw-btn-prev,
+    .btn.btn-info {
+        display: none;
+    }
+}
+
+// SmartWizard(modal-諮詢報價) end
+// Fullcalendar start
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-row,
+.fc-unthemed tbody,
+.fc-unthemed th,
+.fc-unthemed thead {
+    border-color: #ececec;
+    color: $pageBlack;
+    font-size: $pageTSize;
+}
+
+.fc-unthemed td {
+    font-size: 12px;
+}
+
+// Fullcalendar start
+
+// Swiper start
+.collection{
+    .swiper-pagination{
+        top: -40px;
+        right: 0;
+        width: 200px;
+        white-space: nowrap;
+        overflow-x: scroll;
+        z-index: 1;
+        // display: none;
+        &::-webkit-scrollbar{display: none;}
+    }
+    .swiper-button-prev, .swiper-button-next{
+        background-image: url('../assets/images/icon/arrow_left.svg');
+        top: 50%;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-size: 70%;
+        left:-60px;
+        // transform:rotate(180deg);
+        outline:none;
+        transition:box-shadow .2s ease-in-out;
+        // &.tsBoxShadow{
+        //     box-shadow: 0 0 0 10px red;
+        // }
+    }
+    .swiper-button-next{
+        transform:rotate(180deg);
+        left: auto;
+        right: -40px;
+    }
+    .swiper-pagination span{
+        display: inline-block;
+        width: 25px;
+        height: 8px;
+        border-radius: 5px;
+        margin-right: 10px;
+        background-color: $pageLightBlack;
+        outline:none;
+        opacity: 1;
+        &.swiper-pagination-bullet-active{background-color: $pageDeepBlue;}
+    }
+    .swiper-button-disabled{pointer-events: auto;}
+}
+@media screen and (max-width:768px){
+    .collection .swiper-button-next {right: 0px;}
+    .collection .swiper-button-prev {left: 0px;}
+}
+@media screen and (max-width:414px){
+    .collection .swiper-button-prev,.collection .swiper-button-next,.collection .swiper-pagination {
+        display: none;
+        height: 44px;
+    }
+    .collection .swiper-button-next {right: 15px;}
+    .collection .swiper-button-prev {left: 15px;}
+}
+@media screen and (max-width:320px){
+    .collection .swiper-button-next {right: 0px;}
+    .collection .swiper-button-prev {left: 0px;}
+}
+// Swiper end
+
+// VueLazyLoad start
+.vue-lb-arrow,.vue-lb-thumbnail-arrow,.vue-lb-button-close{
+    color:$pageWhite;
+    &:focus{outline:none;}
+}
+// VueLazyLoad end
