@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from '@/components/home/Home'
 import ParentRouter from '@/components/partials/ParentRouter'
 import Marvel from '@/components/marvels/Marvel'
-import Imgur from '@/components/imgur/Imgur'
+import Imgur from '@/components/plugins/Imgur'
 import PhotoZoom from '@/components/plugins/PhotoZoom'
 
 
