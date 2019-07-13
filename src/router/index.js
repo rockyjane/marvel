@@ -5,6 +5,7 @@ import ParentRouter from '@/components/partials/ParentRouter'
 import Marvel from '@/components/marvels/Marvel'
 import Imgur from '@/components/plugins/Imgur'
 import PhotoZoom from '@/components/plugins/PhotoZoom'
+import Social from '@/components/plugins/Social'
 
 
 Vue.use(Router);
@@ -51,6 +52,10 @@ let router = new Router({
 					path: 'photozoom',
 					name: 'plugins.photozoom',
 					component: PhotoZoom
+				}, {
+					path: 'social',
+					name: 'plugins.social',
+					component: Social
 				}
 			],
         },
