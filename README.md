@@ -1,5 +1,11 @@
 # marvel
 
+# Pls Add This In gh-pages branch
+```
+CNAME : page web --- for page
+googlef30b7f1087634f9e.html --- for api
+```
+
 ## Project setup
 ```
 npm install
