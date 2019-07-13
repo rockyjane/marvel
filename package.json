@@ -27,6 +27,7 @@
     "sass-loader": "^7.1.0",
     "vee-validate": "^2.2.9",
     "vue": "^2.6.10",
+    "vue-gapi": "0.0.10",
     "vue-photo-zoom-pro": "^1.2.5",
     "vue-router": "^3.0.6",
     "vue-template-compiler": "^2.6.10",
