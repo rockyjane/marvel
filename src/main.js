@@ -14,6 +14,8 @@ import router from './router/index.js';
 import store from './store/index.js';
 import './style/front_end.scss';
 
+// FB SignIn
+import './api/fbInit'
 // Google SignIn
 import VueGAPI from "vue-gapi";
 const VUE_APP_GOOGLE_CLIENT_ID = process.env.VUE_APP_GOOGLE_CLIENT_ID

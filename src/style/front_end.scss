@@ -108,25 +108,25 @@
         }
     }
     // Loading end
-    // bar start
+    // a-scrollBar start
     @keyframes a-scrollBar{
         0% {
             top:0px;
-            height:0
+            height:0;
         }
         50% {opacity:1}
         70% {
             opacity:1;
             top:0px;
-            height:100%
+            height:100%;
         }
         to{
             opacity:1;
             top:100%;
-            height:0%
+            height:0%;
         }
     }
-    // bar end
+    // a-scrollBar end
 // Share end
 // Header start
 header {
@@ -347,8 +347,8 @@ header {
         h6 {
             top: auto;
             left: auto;
-            right: 4vw;
-            bottom: 13.5vh;
+            right: -7vw;
+            bottom: -9px;
             &.vr-l {
                 writing-mode: vertical-lr;
                 .bar {
@@ -445,7 +445,7 @@ label[for="nextCheck"] {
     overflow: hidden;
     background-color: $pageLightBlack4;
     transition: max-height .6s ease-in-out;
-    max-height: 1200px;
+    max-height: 5000px;
     margin-bottom: $pagePushDown * 3;
     input {
         width: 100%;

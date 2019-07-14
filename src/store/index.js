@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import loading from './modules/loading';
 import marvel from './modules/marvel';
 import googleStatus from './modules/googleStatus';
+import fbStatus from './modules/fbStatus';
 
 Vue.use(Vuex);
 
@@ -13,8 +14,10 @@ export default new Vuex.Store({
 		loading,
 		marvel,
 		googleStatus,
+		fbStatus,
 	},
 	state: {
+		
 	},
 	mutations: {
 		
