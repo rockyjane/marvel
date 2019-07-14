@@ -1,5 +1,5 @@
 <template>
-    <div class="col-mb-6">
+    <div class="col-sm-6">
         <div class="couple coupleFake mb-3" v-if="!fixInfo">
             <div class="row">
                 <div class="col-12 mb-3 text-center">
