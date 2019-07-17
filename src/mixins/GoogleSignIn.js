@@ -63,11 +63,8 @@ export default {
             // 斷開一切授權與身份
             // GoogleAuth.disconnect().then(() => {
             //     cl("Google User disconnected.");
-            //     vm.$router.push({
-            //         name: 'plugins.social'
-            //     }, () => {
-            //         vm.setGoogleState(false)
-            //     })
+            //     vm.setGoogleState(false)
+            //     vm.$router.push({ name: 'plugins.social' })
             // });
         },
         // 抓取使用者資料
