@@ -309,6 +309,7 @@ header {
 
 // Social start
 .socialLogin {
+    background-color: $pageLightBlack7;
     .signIn {
         display: block;
         background-color: $pageRed3;
@@ -397,6 +398,69 @@ header {
     }
 }
 // Social end
+
+// GoogleMap start
+.googleMap {
+    background-color: $pageLightBlack7;
+    user-select: none;
+    .store_box {
+        min-height: 330px;
+        max-height: 500px;
+        iframe {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    h2 {
+        font-size: $pageTSize + 8;
+        label {
+            transition: color .2s ease-in-out;
+            &:hover {color: $pageShallowBlack;}
+            i {
+                font-size: $pageTSize;
+                vertical-align: super;
+            }
+            span {color: $pageShallowBlack;}
+        }
+        input {display: none;}
+    }
+    h5 {
+        font-size: $pageTSize + 2;
+        span {
+            display: block;
+            font-size: $pageTSize - 4;
+        }
+    }
+    .noapi {height: 300px;}
+    .embedMode {
+        i {color: $pageLightBlack3;}
+        input:checked + i {color: $pageShallowBlue;}
+    }
+    .embedZoom {
+        input {background-color: $pageTransparent;}
+        .vue-slider + span {
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .embedStreetview {
+        .store_box {
+            min-height: auto;
+            max-height: none;
+        }
+        iframe {position: static;}
+    }
+    .googleMapJs,
+    .googleMapGeolocation,
+    .googleMapGeolocationNav {
+        height: 300px;
+    }
+}
+// GoogleMap end
 
 // Controller start
 #nextCheck {
