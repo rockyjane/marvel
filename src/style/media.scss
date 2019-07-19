@@ -61,4 +61,11 @@
         height: 55vh;
     }
     // Social end
+    // GoogleMap start
+    .googleMap .store_box {
+        min-height: auto;
+        max-height: none;
+        iframe {position: static;}
+    }
+    // GoogleMap end
 }

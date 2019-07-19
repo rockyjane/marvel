@@ -24,10 +24,12 @@ export default {
         fbLogin() {
             let vm = this
             FB.login((response) => {
-                vm.setFbState(true)
                 vm.setFacebookAccessToken(response.authResponse.accessToken)
-                cl('FB User signed ins.', response)
-                vm.getFbProfile()
+                if (this.fbToken) {
+                    vm.setFbState(true)
+                    cl('FB User signed ins.', response)
+                    vm.getFbProfile()
+                }
             }, {
                 scope: 'email, public_profile',
                 return_scopes: true

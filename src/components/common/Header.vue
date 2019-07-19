@@ -15,6 +15,7 @@
                 <b-dropdown-item :to="{ name: 'plugins.imgur' }">圖片上傳</b-dropdown-item>
                 <b-dropdown-item :to="{ name: 'plugins.photozoom' }">放大鏡</b-dropdown-item>
                 <b-dropdown-item :to="{ name: 'plugins.social' }">社交軟體</b-dropdown-item>
+                <b-dropdown-item :to="{ name: 'plugins.googlemap' }">谷歌地圖</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
             </b-nav-item-dropdown>
         </b-nav>
