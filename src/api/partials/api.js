@@ -60,6 +60,7 @@ export default (baseURL, method, url, cb, config = {}, errCb) => {
             displayLoading: true,
         };
 
+        // 複製後的資訊不會更改到原先的
         let usingConfig = Object.assign(defaultConfig, config);
         toggleLoading(true, usingConfig.displayLoading);
 
