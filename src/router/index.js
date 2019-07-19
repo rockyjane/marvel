@@ -6,6 +6,7 @@ import Marvel from '@/components/marvels/Marvel'
 import Imgur from '@/components/plugins/Imgur'
 import PhotoZoom from '@/components/plugins/PhotoZoom'
 import Social from '@/components/plugins/Social'
+import GoogleMap from '@/components/plugins/GoogleMap'
 
 
 Vue.use(Router);
@@ -56,6 +57,10 @@ let router = new Router({
 					path: 'social',
 					name: 'plugins.social',
 					component: Social
+				}, {
+					path: 'googlemap',
+					name: 'plugins.googlemap',
+					component: GoogleMap
 				}
 			],
         },
