@@ -5,6 +5,7 @@ import marvel from './modules/marvel';
 import googleStatus from './modules/googleStatus';
 import fbStatus from './modules/fbStatus';
 import googleGeolocation from './modules/googleGeolocation';
+import popupModal from './modules/popupModal';
 
 Vue.use(Vuex);
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
 		googleStatus,
 		googleGeolocation,
 		fbStatus,
+		popupModal,
 	},
 	state: {
 		
