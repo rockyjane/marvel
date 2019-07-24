@@ -7,6 +7,7 @@ import Imgur from '@/components/plugins/Imgur'
 import PhotoZoom from '@/components/plugins/PhotoZoom'
 import Social from '@/components/plugins/Social'
 import GoogleMap from '@/components/plugins/GoogleMap'
+import Youtube from '@/components/plugins/Youtube'
 
 
 Vue.use(Router);
@@ -61,6 +62,16 @@ let router = new Router({
 					path: 'googlemap',
 					name: 'plugins.googlemap',
 					component: GoogleMap
+				}, {
+					path: 'youtube',
+					name: 'plugins.youtube',
+					component: Youtube,
+					children: [{
+							path: ':page',
+							name: 'plugins.youtube.page',
+							component: Youtube,
+						},
+					],
 				}
 			],
         },
@@ -69,11 +80,12 @@ let router = new Router({
 			redirect: { name: 'home' }
 		},
 	],
-	scrollBehavior() {
-        return {
-            x: 0,
-            y: 0
-        }
+	scrollBehavior(from) {
+		if (from.name == 'plugins.youtube.page') return 
+		return {
+			x: 0,
+			y: 0
+		}
     }
 })
 
