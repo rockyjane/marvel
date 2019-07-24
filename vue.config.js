@@ -13,5 +13,6 @@ module.exports = {
         open: process.platform === 'darwin',
         https: process.env.HTTP_OVER === 'https',
     },
+    transpileDependencies: ['vue-clamp', 'resize-detector'],
     publicPath: process.env.BASE_URL,   // 消除 github 提供的網頁伺服器所存在的路徑 bug
 }

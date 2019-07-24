@@ -1138,6 +1138,7 @@ select {
             width: 100%;
             font-size:$pageTSize + 2;
             font-weight:bolder;
+            text-align: center;
         }
         .close{
             position: absolute;
@@ -1150,6 +1151,8 @@ select {
             border-bottom-right-radius: 5px;
             color: $pageShallowWhite;
             transition:transform .3s ease-in-out;
+            z-index: 1;
+            cursor: pointer;
             &:hover{
                 color: $pageShallowWhite;
                 transform:scale(1.3);
@@ -1442,6 +1445,45 @@ right: 0;
     }
 }
 // vue-slider-component end
+
+// vue-paginate start
+.paginate-list {
+    width: 159px;
+    margin: 0 auto;
+    text-align: left;
+    li {
+      display: block;
+      &:before {
+        content: '⚬ ';
+        font-weight: bold;
+        color: slategray;
+      }
+    }
+}
+.paginate-links {
+    user-select: none;
+    text-align: center;
+    a {
+        cursor: pointer;
+    }
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+    li.active a {
+        font-weight: bold;
+    }
+    li.next:before {
+        content: ' | ';
+        margin-right: 13px;
+        color: #ddd;
+    }
+    li.disabled a {
+        color: #ccc;
+        cursor: no-drop;
+    }
+}
+// vue-paginate end
 
 // @chenfengyuan/vue-number-input start
 .number-input {

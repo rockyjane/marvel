@@ -68,4 +68,14 @@
         iframe {position: static;}
     }
     // GoogleMap end
+    // Youtube start
+    .youtube {
+        .youList {
+            .subscriberCount {
+                top: -5px;
+                right: 10px;
+            }
+        }
+    }
+    // Youtube end
 }
