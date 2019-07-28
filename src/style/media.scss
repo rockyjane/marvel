@@ -13,6 +13,12 @@
     // Home end
 }
 @media screen and (max-width: 767px) {
+    // Share start
+    .modal {
+        .modal-header {padding-left: 0;}
+        .modal-content {padding-left: 15px;}
+    }
+    // Share end
     // Home start
     .home {
         .parallaxItem {

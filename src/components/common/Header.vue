@@ -17,6 +17,8 @@
                 <b-dropdown-item :to="{ name: 'plugins.social' }">社交軟體</b-dropdown-item>
                 <b-dropdown-item :to="{ name: 'plugins.googlemap' }">谷歌地圖</b-dropdown-item>
                 <b-dropdown-item :to="{ name: 'plugins.youtube' }">影音媒體</b-dropdown-item>
+                <b-dropdown-item :to="{ name: 'plugins.language' }">語言包</b-dropdown-item>
+                <b-dropdown-item href="http://rockyjane-donut.ml" target="_blank">遊戲</b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
             </b-nav-item-dropdown>
         </b-nav>
