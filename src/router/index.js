@@ -8,6 +8,7 @@ import PhotoZoom from '@/components/plugins/PhotoZoom'
 import Social from '@/components/plugins/Social'
 import GoogleMap from '@/components/plugins/GoogleMap'
 import Youtube from '@/components/plugins/Youtube'
+import I18N from '@/components/plugins/I18N'
 
 
 Vue.use(Router);
@@ -72,7 +73,11 @@ let router = new Router({
 							component: Youtube,
 						},
 					],
-				}
+				}, {
+					path: 'language',
+					name: 'plugins.language',
+					component: I18N,
+				},
 			],
         },
         {

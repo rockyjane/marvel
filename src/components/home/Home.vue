@@ -2,14 +2,14 @@
     <div class="home fullHeight">
         <div class="parallax parallax1 pierFont posr">
             <div class="titleItem text-center posa">
-                <h2>WelCome</h2>
+                <h2>{{ $t('home.h2.t1') }}</h2>
             </div>
         </div>
         <div class="parallaxItem item1">
             <div class="content">
                 <div class="homepage-title-section only_pierFont text-center">
-                    <h1>Rocky Jane</h1>
-                    <span class="section-subtitle">Front-End Developer</span>
+                    <h1>{{ $t('home.h1') }}</h1>
+                    <span class="section-subtitle">{{ $t('home.profession') }}</span>
                 </div>
                 <div class="code-container">
                     <div class="code-header">
@@ -21,12 +21,12 @@
                         <ol class="custom-counter">
                             <li>/*</li>
                             <li></li>
-                            <li>Hello,</li>
+                            <li>{{ $t('home.pre.t1') }},</li>
                             <li></li>
-                            <li>I'm a frontend developer.</li>
+                            <li>{{ $t('home.pre.t2') }}.</li>
                             <li></li>
-                            <li>If you scroll down, you can find out</li>
-                            <li>all you'd like to know about me.</li>
+                            <li>{{ $t('home.pre.t3') }}, {{ $t('home.pre.t4') }}</li>
+                            <li>{{ $t('home.pre.t5') }}.</li>
                             <li></li>
                             <li>*/</li>
                             <li></li>
@@ -41,7 +41,7 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>begin();</li>
+                            <li>{{ $t('home.pre.t6') }}();</li>
                         </ol>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="parallax parallax2 pierFont posr">
             <div class="titleItem text-center posa">
-                <h2>History</h2>
+                <h2>{{ $t('home.h2.t2') }}</h2>
             </div>
         </div>
         <div class="parallaxItem item2">
@@ -70,7 +70,7 @@
         </div>
         <div class="parallax parallax3 pierFont posr">
             <div class="titleItem text-center posa">
-                <h2>Experience</h2>
+                <h2>{{ $t('home.h2.t3') }}</h2>
             </div>
         </div>
         <div class="parallaxItem item3">
@@ -127,7 +127,7 @@
         </div>
         <div class="parallax parallax4 pierFont posr">
             <div class="titleItem text-center posa">
-                <h2>Tool</h2>
+                <h2>{{ $t('home.h2.t4') }}</h2>
             </div>
         </div>
         <div class="parallaxItem item4 text-center">
@@ -139,7 +139,7 @@
         </div>
         <div class="parallax parallax5 pierFont posr">
             <div class="welCome titleItem text-center posa">
-                <h2>Thanks For Watching</h2>
+                <h2>{{ $t('home.h2.t5') }}</h2>
             </div>
         </div>
     </div>

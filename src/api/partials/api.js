@@ -25,24 +25,26 @@ let toggleLoading = (display, displayLoading) => {
 
 export default (baseURL, method, url, cb, config = {}, errCb) => {
     let isStillGetting = _.get(apiStatus, url, false);
-    // let langCode = 'en';
 
+    // i18n 有後端配合時再使用 start
+    // let langCode = 'en';
     // switch (store.state.lang) {
     //     case 'zhTw':
     //         langCode = 'zh-TW'
     //         break;
-    //     case 'zhHk':
-    //         langCode = 'zh-CN'
+    //     case 'spain':
+    //         langCode = 'spain'
     //         break;
     // }
-
     // let getLang = {
     //     locale: langCode
     // }
+    // i18n 有後端配合時再使用 end
 
     if (!isStillGetting) {
         _.set(apiStatus, url, true);
 
+        // i18n 有後端配合時再使用 start
         // if (method == "get") {
         //     config.params = Object.assign(getLang, config.params);
         // } else {
@@ -52,6 +54,7 @@ export default (baseURL, method, url, cb, config = {}, errCb) => {
         //         config.data = getLang;
         //     }
         // }
+        // i18n 有後端配合時再使用 end
 
         let defaultConfig = {
             baseURL,
