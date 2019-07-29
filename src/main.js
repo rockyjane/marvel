@@ -9,6 +9,7 @@ import zhTW from 'vee-validate/dist/locale/zh_TW.js';   // 表格檢測繁中包
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'        // 放大鏡
 import 'font-awesome/css/font-awesome.css'              // 免費 ICON
 import VuePaginate from 'vue-paginate'                  // 頁碼
+import i18n from './i18n/index.js';                     // 語言包
 
 // myfile
 import App from './App.vue';
@@ -39,5 +40,6 @@ Vue.config.productionTip = process.env.NODE_ENV !== 'production';
 new Vue({
     router,
     store,
+    i18n,
     render: h => h(App),
 }).$mount('#app')

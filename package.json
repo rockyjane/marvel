@@ -30,6 +30,7 @@
     "vue": "^2.6.10",
     "vue-clamp": "^0.2.1",
     "vue-gapi": "0.0.10",
+    "vue-i18n": "^8.12.0",
     "vue-paginate": "^3.6.0",
     "vue-photo-zoom-pro": "^1.2.5",
     "vue-router": "^3.0.6",
