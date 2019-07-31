@@ -2,7 +2,7 @@
     <div class="socialLogin fullHeight posr pt-5">
         <div class="row justify-content-center mb-2 other_login" v-if="!state">
             <div class="col-10 col-sm-4 mb-2 text-center">
-                <a href="javascript:;" class="facebook_signIn signIn clearbox" @click="fbLogin">
+                <a href="javascript:;" class="facebook_signIn signIn clearbox" @click="goingFB">
                     <div class="title">FB {{ title }}</div>
                 </a>
             </div>
@@ -82,7 +82,10 @@
                 } else {
                     this.googleSignOut()
                 }
-            }
+            },
+            goingFB() {
+                if (confirm('將導向能夠測試FB的https協定網站，登出鈕並不在這個測試網站提供(可使用重整)')) window.location.href = 'https://apiusejson.github.io/forjson/#/plugins/social'
+            },
         },
     }
 </script>
