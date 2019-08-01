@@ -148,7 +148,7 @@ header {
             }
             .nav-link,
             .dropdown-item {
-                font-size: $pageTSize / 2 + 1;
+                font-size: $pageTSize - 4;
                 line-height: 42px;
                 padding: 0 5%;
                 display: inline-block;
@@ -524,6 +524,7 @@ header {
 .language_box {background-color: $pageLightBlack7;}
 .language_content {min-height: 500px;}
 .i18n {
+    margin-bottom: $pagePushDown;
     .nav > li {
         background-color: $pageWhite;
         box-shadow: 1px 1px 2px 0px inset;

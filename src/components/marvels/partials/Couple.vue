@@ -17,7 +17,7 @@
                         <div class="cover" :style="`background-image:url(${item.wifeCover});`"></div>
                     </div>
                 </div>
-                <div class="col-6 offset-6 mb-3">
+                <div class="col-sm-6 offset-sm-6 mb-3">
                     <div class="item" v-if="!counting">
                         <div class="row justify-content-center">
                             <div class="col-6">
@@ -78,7 +78,7 @@
                                      :style="`background-image:url(${item.wifeCover});`" />
                     </div>
                 </div>
-                <div class="col-6 offset-6 mb-3">
+                <div class="col-sm-6 offset-sm-6 mb-3">
                     <div class="item">
                         <div class="row justify-content-center">
                             <div class="col-6">

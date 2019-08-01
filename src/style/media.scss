@@ -19,6 +19,15 @@
         .modal-content {padding-left: 15px;}
     }
     // Share end
+    // Header start
+    header .nav .nav-item {
+        .nav-link,
+        .dropdown-item {
+            font-size: $pageTSize - 2;
+            padding: 0 3%;
+        }
+    }
+    // Header end
     // Home start
     .home {
         .parallaxItem {
@@ -49,6 +58,12 @@
     // Imgur end
     // Marvel start
     .marvel {
+        .couple .clickEnter {display: block;}
+        .card {
+            .tab-content {
+                .card-body {padding: 1.25rem 0;}
+            }
+        }
         .card-box{
             column-count: 1;
             &:after {display: none;}
