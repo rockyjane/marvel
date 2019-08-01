@@ -164,11 +164,15 @@ header {
 
 // Home start
 .parallax {
+    min-width: 100%;
     opacity: 0.65;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     &.parallax1,
     &.parallax5 {
         background-image: url('../assets/images/pic/parallax1.jpg');
