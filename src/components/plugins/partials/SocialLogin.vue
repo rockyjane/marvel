@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="col-10 col-sm-4 mb-2 text-center">
-                <a href="javascript:;" class="google_signIn signIn clearbox"  @click="googleSignIn">
+                <a href="javascript:;" class="google_signIn signIn clearbox" @click="googleSignIn">
                     <div class="title">Google {{ title }}</div>
                 </a>
             </div>
@@ -84,7 +84,7 @@
                 }
             },
             goingFB() {
-                if (confirm('將導向能夠測試FB的https協定網站，登出鈕並不在這個測試網站提供(可使用重整)')) window.location.href = 'https://apiusejson.github.io/forjson/#/plugins/social'
+                if (confirm('將導向能夠測試FB的https協定網站')) window.location.href = 'https://apiusejson.github.io/forjson/#/plugins/social'
             },
         },
     }

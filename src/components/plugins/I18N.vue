@@ -40,18 +40,26 @@
             Lang,
         ],
         methods: {
-            googleLanguage() {
+            googleTranslateInit() {
+                let checkIfGoogleLoaded = setInterval(() => {
+                    if (google.translate.TranslateElement != null) {
+                        clearInterval(checkIfGoogleLoaded);
+                        this.googleLanguage('google_translate_element');
+                    }
+                }, 1000);
+            },
+            googleLanguage(id) {
                 new google.translate.TranslateElement({
                     pageLanguage: 'zh-TW',
                     includedLanguages: 'en,ja,ko,tl,vi,zh-TW',
                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                     autoDisplay: false
-                }, 'google_translate_element')
+                }, id)
             },
         },
-        beforeMount() {
+        mounted() {
             this.$nextTick(()=>{
-                this.googleLanguage();
+                this.googleTranslateInit();
             })
         },
     }

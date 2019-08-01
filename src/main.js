@@ -43,3 +43,12 @@ new Vue({
     i18n,
     render: h => h(App),
 }).$mount('#app')
+
+function tran() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.defer = true;
+    script.src = `https://translate.google.com/translate_a/element.js?callback=googleTranslateElementInit`;
+    document.querySelector('head').appendChild(script);
+}
+tran()
