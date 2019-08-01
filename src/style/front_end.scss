@@ -628,6 +628,7 @@ label[for="nextCheck"] {
         }
 
         .clickEnter {
+            display: block;
             font-size: $pageTSize - 3;
             padding: 5px;
         }
